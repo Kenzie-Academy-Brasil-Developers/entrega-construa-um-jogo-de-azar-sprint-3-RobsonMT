@@ -4,6 +4,11 @@
     margin: 0;
 }
 
+:root{
+    --red-alert: rgba(199, 49, 12, 0.877);
+    --green-alert: rgba(85, 224, 21, 0.877):
+}
+
 ul,li{
     list-style: none;
 }
@@ -15,7 +20,6 @@ header{
     padding-top: 30px;
     text-align: center;
 }
-
 
 .wrapper{
     background-color: rgb(0, 0, 0);
@@ -32,19 +36,17 @@ ul{
     justify-content: center;
     align-items: center;
     height: 150px;
-    /* background-color: azure; */
 }
 
 li{
     background-color: rgb(255, 255, 255);
-    /* margin: 2px; */
     padding: 10px;
     width: 118px;
     height: inherit;
     display: flex;
-    border: 5px rgba(158, 158, 34, 0.904) solid;
+    border: 6px solid #e5c137;
     border-radius: 5px;
-    /* box-shadow: 2px 2px 2px 2px rgba(158, 158, 34, 0.904); */
+    margin: 2px;
 }
 
 li>img{
@@ -53,7 +55,6 @@ li>img{
 }
 
 label{
-    /* background-color: blueviolet; */
     margin: 20px;
 }
 
@@ -62,9 +63,55 @@ label>input{
     border: none;
     border-radius: 5px;
     width: 100px;
-
+    font-family: 'ubuntu';
+}
+label>input:hover{
+    background-color: #ccc;
+}
+label>input:active{
+    background-color: rgb(102, 100, 100);
 }
 
 .result{
     color: #fff;
+}
+
+@keyframes loser{
+    0% {
+        background-color: var(--red-alert);
+    }
+    50% {
+        background-color: black;
+    }
+    100% {
+        background-color: var(--red-alert);
+    }
+}
+.loser {
+    animation-name: loser;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes winner{
+    0% {
+        background-color: green;
+    }
+    25% {
+        background-color: black;
+    }
+    50% {
+        background-color: green;
+    }
+    75% {
+        background-color: black;
+    }
+    100% {
+        background-color: green;
+    }
+}
+.winner {
+    animation-name: winner;
+    animation-duration: 2s;
+    animation-iteration-count: 2;
 }
