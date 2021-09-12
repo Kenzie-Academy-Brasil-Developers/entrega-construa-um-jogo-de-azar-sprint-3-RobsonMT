@@ -97,24 +97,24 @@ label>input:active{
 
 @keyframes starting{
     0% {
-        opacity: 40%;
+        opacity: 80%;
     }
     25%{
-        opacity: 80%;
+        opacity: 40%;
     }
     50% {
-        opacity: 40%;
-    }
-    75%{
         opacity: 80%;
     }
-    100% {
+    75%{
         opacity: 40%;
+    }
+    100% {
+        opacity: 90%;
     }
 }
 .starting {
     animation-name: starting;
-    animation-delay: 2s;
+    animation-delay: 1.8s;
     animation-duration: 4s;
     animation-iteration-count: 1;
     animation-fill-mode: ease-in-out;
