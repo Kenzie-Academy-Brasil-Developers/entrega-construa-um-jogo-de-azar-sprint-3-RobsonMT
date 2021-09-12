@@ -7,6 +7,7 @@
 :root{
     --red-alert: rgba(199, 49, 12, 0.877);
     --green-alert: rgba(85, 224, 21, 0.877):
+    --yellow-alert: #e6d00ec4;
 }
 
 ul,li{
@@ -17,7 +18,7 @@ header{
     background-color: rgb(0, 0, 0);
     width: 100%;
     height: 100px;
-    padding-top: 30px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -44,9 +45,8 @@ li{
     width: 118px;
     height: inherit;
     display: flex;
-    border: 6px solid #e5c137;
+    border: 5px solid #e5c137;
     border-radius: 5px;
-    margin: 2px;
 }
 
 li>img{
@@ -93,6 +93,23 @@ label>input:active{
     animation-iteration-count: 1;
 }
 
+@keyframes two-Hits{
+    0% {
+        background-color: var(--yellow-alert);
+    }
+    50% {
+        background-color: black;
+    }
+    100% {
+        background-color: var(--yellow-alert);
+    }
+}
+.two-Hits {
+    animation-name: loser;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
 @keyframes winner{
     0% {
         background-color: green;
@@ -114,4 +131,32 @@ label>input:active{
     animation-name: winner;
     animation-duration: 2s;
     animation-iteration-count: 2;
+}
+
+audio{
+    display: none;
+}
+
+@media screen and (min-width: 500px){
+    ul{
+        height: 200px;
+    }
+    li{
+        width: 150px;
+        margin: 2px;
+    }
+    
+}
+
+@media screen and (min-width: 700px){
+    ul{
+        height: 220px;
+    }
+    li{
+        width: 180px;
+    }
+    label>input{
+        width: 120px;
+    }
+    
 }
