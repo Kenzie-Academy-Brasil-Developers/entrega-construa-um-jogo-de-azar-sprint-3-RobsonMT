@@ -3,38 +3,33 @@ const btn = () =>{
     addEventListener('click', start)
 }
 btn();
-    
-const alerts = document.querySelector('.wrapper');
-const alertsH = document.querySelector('.header');
+ 
+const alerts = document.querySelector('#bg-body');
 
-const playSoundAlert = document.querySelector('#playSound')
-const winnerSoundAlert = document.querySelector('#winnerSound')
-const loserSoundAlert = document.querySelector('#loserSound')
+function TwoHitsAlert(){
+    alerts.classList.add('twohits');
+}
 
-function winnerAlert (){
+function winnerAlert(){
     alerts.classList.add('winner');
-    alertsH.classList.add('winner');
 }
 
-function TwoHits (){
-    alerts.classList.add('two-Hits');
-    alertsH.classList.add('two-Hits');
-}
-
-function loserAlert (){
+function loserAlert(){
     alerts.classList.add('loser');
-    alertsH.classList.add('loser');
 }
 
-function winnerSound (){
-    winnerSoundAlert.play();
-}
-
-function playSound (){
+const playSoundAlert = document.querySelector('#playSound');
+const playSound = () =>{
     playSoundAlert.play();
 }
 
-function loserSound (){
+const winnerSoundAlert = document.querySelector('#winnerSound');
+const winnerSound = () =>{
+    winnerSoundAlert.play();
+}
+
+const loserSoundAlert = document.querySelector('#loserSound');
+const loserSound = () =>{
     loserSoundAlert.play();
 }
 
@@ -51,22 +46,9 @@ let counter = 0;
 function start(){
 
     `${playSound()}`;
-    alerts.classList.contains('winner');
-    alerts.classList.remove('winner');
-    alerts.classList.contains('loser');
-    alerts.classList.remove('loser');
-    alertsH.classList.contains('winner');
-    alertsH.classList.remove('winner');
-    alertsH.classList.contains('loser');
-    alertsH.classList.remove('loser');
-    alerts.classList.contains('two-Hits');
-    alerts.classList.remove('two-Hits');
-    alertsH.classList.contains('two-Hits');
-    alertsH.classList.remove('two-Hits');
 
     let Random = setInterval(function(){
     counter++; 
-
     const first = Math.floor(Math.random() * 8+1); 
     console.log(first)
     const second = Math.floor(Math.random() * 8+1); 
@@ -77,6 +59,13 @@ function start(){
     document.first.src = imagesList[first]; 
     document.second.src = imagesList[second]; 
     document.third.src = imagesList[third];
+
+    alerts.classList.contains('winner');
+    alerts.classList.remove('winner');
+    alerts.classList.contains('loser');
+    alerts.classList.remove('loser');
+    alerts.classList.contains('twohits');
+    alerts.classList.remove('twohits');
     
     if (counter > 10){
         let resultOfFirst = imagesList[first]; 
@@ -90,12 +79,12 @@ function start(){
 
         if((resultOfFirst == resultOfThird) && (resultOfFirst == resultOfSecond)){  
             showResult.innerHTML = `${winner}`;
-            `${winnerAlert()}`;
             `${winnerSound()}`;
+            `${winnerAlert()}`;
 
             }else if((resultOfFirst == resultOfSecond) || (resultOfFirst == resultOfThird) || (resultOfThird == resultOfSecond)){ 
                 showResult.innerHTML = `${twoHits}`;
-                `${TwoHits()}`;
+                `${TwoHitsAlert()}`;
             }else{ 
                 showResult.innerHTML = `${loser}`; 
                 `${loserSound()}`;
