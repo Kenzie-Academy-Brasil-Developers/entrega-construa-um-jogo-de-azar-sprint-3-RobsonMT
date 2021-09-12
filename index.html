@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <header>
-      <img src="./image/46430176.jpg" alt="" style="width: 300px;">
+<body id="bg-body">
+    <header class="header">
+      <img src="./assets/image/logo.png" alt="" class="starting">
     </header>
-    
     <section class="wrapper">
       <ul>
-        <li><img src = "./image/0.png" name = "first"></li>
-        <li><img src = "./image/0.png" name = "second"></li>
-        <li><img src = "./image/0.png" name = "third"></li>
+        <li><img src = "./assets/image/0.png" name = "first"></li>
+        <li><img src = "./assets/image/0.png" name = "second"></li>
+        <li><img src = "./assets/image/0.png" name = "third"></li>
       </ul>
-
       <label for="">
-        <input type="button" value="jogar" onclick=" slot();">
+        <input id="play" type="button" value="jogar">
       </label>
-
-      <div class="result">Resultado:<span id="showResult"></span></div>
+      <div class="result"><span id="showResult"></span></div>
     </section>
-
-    <script src="./script.js"></script>
+    <!-- sons de alerta -->
+    <audio id="winnerSound">
+      <source src="./assets/sounds/winner.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="playSound">
+      <source src="./assets/sounds/play.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="loserSound">
+      <source src="./assets/sounds/loser.mp3" type="audio/mp3" />
+    </audio>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
