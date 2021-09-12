@@ -73,8 +73,8 @@ function start(){
         let resultOfThird = imagesList[third];
 
         let showResult = document.querySelector('#showResult')
-        const winner = "Parabéns, voce ganhou!";
-        const twoHits = "Quase.., não foi dessa vez!";
+        const winner = "Parabéns, você ganhou!";
+        const twoHits = "Quase..., não foi dessa vez!";
         const loser = "Você perdeu, Tente outra vez!";
 
         if((resultOfFirst == resultOfThird) && (resultOfFirst == resultOfSecond)){  
